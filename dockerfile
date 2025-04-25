@@ -34,6 +34,6 @@ RUN uv pip install --system --no-cache-dir -r requirements/system.txt -i https:/
     # Clean pip cache and temporary files
     && rm -rf /root/.cache /tmp/*
 
-EXPOSE 8000
+EXPOSE 7860
 
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "1", "--timeout", "0", "--log-config", "gunicorn_logging.conf", "app.main:app", "-k", "uvicorn.workers.UvicornWorker"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:7860", "--workers", "1", "--timeout", "0", "--log-config", "gunicorn_logging.conf", "app.main:app", "-k", "uvicorn.workers.UvicornWorker"]
